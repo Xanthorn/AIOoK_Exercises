@@ -61,7 +61,10 @@ function multiplication() {
 function division() {
     let first = parseInt(firstNumber.value);
     let second = parseInt(secondNumber.value);
-    if (!isNaN(first) && !isNaN(second)) {
+    if (second == 0) {
+        result.textContent = "Cannot divide by 0";
+        this.value = "";
+    } else if (!isNaN(first) && !isNaN(second)) {
         score.textContent = first / second;
         mark.textContent = "/";
     } else {
