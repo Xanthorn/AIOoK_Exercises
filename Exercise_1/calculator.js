@@ -1,25 +1,25 @@
 var score = document.getElementById("score");
 var mark = document.getElementById("mark");
-var notification = document.getElementById("notification");
+var result = document.getElementById("result");
 
 var firstNumber = document.getElementById("firstNumber");
 var secondNumber = document.getElementById("secondNumber");
 
 function firstCheck(){
     if(isNaN(parseInt(firstNumber.value))){
-      notification.textContent = "Only numbers !!";
+      result.textContent = "Only numbers !!";
       this.value = "";
     } else {
-      notification.textContent = "";
+      result.textContent = "";
     }
   }
   
   function secondCheck(){
     if(isNaN(parseInt(secondNumber.value))){
-      notification.textContent = "Only numbers !!";
+      result.textContent = "Only numbers !!";
       this.value = ""; 
     } else {
-      notification.textContent = "";
+      result.textContent = "";
     }
   }
 
@@ -31,7 +31,7 @@ function addition(){
     score.textContent = first + second;
     mark.textContent = "+";
     } else {
-      notification.textContent = "Please put some numbers in the given fields!";}
+      result.textContent = "Please put some numbers in the given fields!";}
 }
 
 function subtraction(){
@@ -42,7 +42,7 @@ function subtraction(){
     score.textContent = first - second;
     mark.textContent = "-";
     } else {
-      notification.textContent = "Please put some numbers in the given fields!";
+      result.textContent = "Please put some numbers in the given fields!";
     }
  }
 
@@ -64,6 +64,6 @@ function subtraction(){
     score.textContent = result;
     mark.textContent = "^";
     } else {
-      notification.textContent = "Please put some numbers in the given fields!";
+      result.textContent = "Please put some numbers in the given fields!";
     }
 }
