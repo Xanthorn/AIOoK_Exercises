@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    
+    <title>Calculator</title>
+</head>
+
+<body style="margin:10px;">
+    <div>
+        <input onchange="firstCheck()" type="text" id="firstNumber" style="font-size: 22px;" />
+        <label id="mark" style="font-size: 22px;"> &nbsp;</label>
+        <input onchange="secondCheck()" type="text" id="secondNumber" style="font-size: 22px;" />
+        <label id="equal" style="font-size: 22px;">=</label>
+        <label id="score" style="font-size: 22px;"></label>
+    </div>
+    <div id="actionMenu" style="margin-top:10px;">
+        <button onclick="addition()" id="addition" style="margin-right: 10px;">+</button>
+        <button onclick="subtraction()" id="subtraction" style="margin-right: 10px;">-</button>
+        <button id="multiplication" style="margin-right: 10px;">*</button>
+        <button id="division" style="margin-right: 10px;">/</button>
+        <button onclick="exponentiation()" id="exponentiation">x^</button>
+    </div>
+    <p id="notification" style="color:red;font-style:italic;"></p>
+</body>
+
+</html>
+
+<footer>
+    <script src="calculator.js"></script>
+    <link rel="stylesheet" href="calculator.css">
+</footer>
