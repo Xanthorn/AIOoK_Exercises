@@ -22,47 +22,45 @@
         <button onclick="exponentiation()" id="exponentiation">x^</button>
         <button onclick="showDistanceCalculator()" id="distance">distance between points</button>
     </div>
-    <div id="coordinatesInput">
-        <form action="">
-            <div>
-                <h1>
-                    First Coordinate
-                </h1>
-                <input onChange="" type="text" id="firstX" placeholder="Latitude">
-                <input type="radio" name="typeOfFirstX" value="N" checked>
-                <label>N</label>
-                <input type="radio" name="typeOfFirstX" value="S">
-                <label>S</label>
-                <br>
+    <div id="coordinatesInput" hidden>
+        <div>
+            <h1>
+                First Coordinate
+            </h1>
+            <input onChange="" type="text" id="firstX" placeholder="Latitude">
+            <input type="radio" name="typeOfFirstX" value="N" checked>
+            <label>N</label>
+            <input type="radio" name="typeOfFirstX" value="S">
+            <label>S</label>
+            <br>
 
-                <input onChange="" type="text" id="firstY" placeholder="Longtitude">
-                <input type="radio" name="typeOfFirstY" value="W" checked>
-                <label>W</label>
-                <input type="radio" name="typeOfFirstY" value="E">
-                <label>E</label>
-            </div>
-            <div>
-                <h1>
-                    Second Coordinate
-                </h1>
-                <input onChange="" type="text" id="secondX" placeholder="Latitude">
-                <input type="radio" name="typeOfSecondX" value="N" checked>
-                <label>N</label>
-                <input type="radio" name="typeOfSecondX" value="S">
-                <label>S</label>
-                <br>
+            <input onChange="" type="text" id="firstY" placeholder="Longtitude">
+            <input type="radio" name="typeOfFirstY" value="W" checked>
+            <label>W</label>
+            <input type="radio" name="typeOfFirstY" value="E">
+            <label>E</label>
+        </div>
+        <div>
+            <h1>
+                Second Coordinate
+            </h1>
+            <input onChange="" type="text" id="secondX" placeholder="Latitude">
+            <input type="radio" name="typeOfSecondX" value="N" checked>
+            <label>N</label>
+            <input type="radio" name="typeOfSecondX" value="S">
+            <label>S</label>
+            <br>
 
-                <input onChange="" type="text" id="secondY" placeholder="Longtitude">
-                <input type="radio" name="typeOfSecondY" value="W" checked>
-                <label>W</label>
-                <input type="radio" name="typeOfSecondY" value="E">
-                <label>E</label>
-            </div>
-            <div>
-                <button onclick="calculateDistance()" id="distance()">Calculate</button>
-                <button onclick="hideDistanceCalculator()">Cancel</button>
-            </div>
-        </form>
+            <input onChange="" type="text" id="secondY" placeholder="Longtitude">
+            <input type="radio" name="typeOfSecondY" value="W" checked>
+            <label>W</label>
+            <input type="radio" name="typeOfSecondY" value="E">
+            <label>E</label>
+        </div>
+        <div>
+            <button onclick="calculateDistance()" id="calculateDistance">Calculate</button>
+            <button onclick="hideDistanceCalculator()">Cancel</button>
+        </div>
         <div>
             Distance:
             <input id="distanceResult" readonly>

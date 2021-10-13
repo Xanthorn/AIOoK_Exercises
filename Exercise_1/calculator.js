@@ -9,16 +9,12 @@ var distanceResult = document.getElementById("distanceResult");
 
 var firstPoint = {
     x: document.getElementById("firstX"),
-    y: document.getElementById("firstY"),
-    typeOfX: document.querySelector('input[name="typeOfFirstX"]:checked'),
-    typeOfY: document.querySelector('input[name="typeOfFirstY"]:checked')
+    y: document.getElementById("firstY")
 };
 
 var secondPoint = {
     x: document.getElementById("secondX"),
-    y: document.getElementById("secondY"),
-    typeOfX: document.querySelector('input[name="typeOfSecondX"]:checked'),
-    typeOfY: document.querySelector('input[name="typeOfSecondY"]:checked')
+    y: document.getElementById("secondY")
 };
 
 function firstCheck() {
@@ -124,25 +120,30 @@ function calculateDistance() {
     let firstY = parseInt(firstPoint.y.value);
     let secondX = parseInt(secondPoint.x.value);
     let secondY = parseInt(secondPoint.y.value);
+    let typeOfFirstX = document.querySelector('input[name="typeOfFirstX"]:checked').value;
+    let typeOfFirstY = document.querySelector('input[name="typeOfFirstY"]:checked').value;
+    let typeOfSecondX = document.querySelector('input[name="typeOfSecondX"]:checked').value;
+    let typeOfSecondY = document.querySelector('input[name="typeOfSecondY"]:checked').value;
 
-    if (firstPoint.typeOfX.value === "S") {
+    if (typeOfFirstX === "S") {
         firstX *= -1;
     }
 
-    if (firstPoint.typeOfY.value === "W") {
+    if (typeOfFirstY === "W") {
         firstY *= -1;
     }
 
-    if (secondPoint.typeOfX.value === "S") {
+    if (typeOfSecondX === "S") {
         secondX *= -1;
     }
 
-    if (secondPoint.typeOfY.value === "W") {
+    if (typeOfSecondY === "W") {
         secondY *= -1;
     }
 
     let beforeSqrt = (secondX - firstX) * (secondX - firstX) + (secondY - firstY) * (secondY - firstY);
     let output = Math.sqrt(beforeSqrt);
+    output *= 111 * 0.5399568;
     distanceResult.value = output;
 }
 
