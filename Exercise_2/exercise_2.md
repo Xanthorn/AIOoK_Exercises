@@ -1,4 +1,4 @@
-Zadanie nr 2
+# Zadanie nr 2
 <ol>
 <li>
   Stwórz początkową aplikację korzystając ze skryptu "create-react-app". Następnie zapoznaj się z wygenerowaną strukturą plików i uruchom aplikację w przeglądarce. Zmodyfikuj plik App.js, aby wyświetlił listę 5 obiektów na drodze do celu wyprawy. Dane obiektu do wyświetlenia: nazwa, długość i szerokość geograficzna, odległość od poprzedniego obiektu (liczona w programie), planowana data dotarcia w formie tekstowej. Przykładowo: Przylądek Leeuwin, 34°22′35″S 115°08′11″E, 2972 NM, 20.06.2021. Dodaj odpowiedni styl CSS.
