@@ -107,10 +107,29 @@ function exponentiation() {
 }
 
 function validateLatitude(x) {
+    x = document.getElementById(`${x}`);
     if (isNaN(parseInt(x.value))) {
         result.textContent = "Only numbers !!";
         this.value = "";
-    } else {
+    } else if (parseInt(x.value) > 90 || parseInt(x.value) < 0) {
+        result.textContent = "The latitude should be between 0 and 90!!!";
+        this.value = "";
+    }
+    else {
+        result.textContent = "";
+    }
+}
+
+function validateLongtitude(x) {
+    x = document.getElementById(`${x}`);
+    if (isNaN(parseInt(x.value))) {
+        result.textContent = "Only numbers !!";
+        this.value = "";
+    } else if (parseInt(x.value) > 180 || parseInt(x.value) < 0) {
+        result.textContent = "The longtitude should be between 0 and 180!!!";
+        this.value = "";
+    }
+    else {
         result.textContent = "";
     }
 }
