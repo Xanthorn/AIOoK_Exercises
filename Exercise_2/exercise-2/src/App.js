@@ -1,14 +1,13 @@
 import './App.css';
 import PrintPlaces from './PrintPlaces.js';
-import { Container, Row } from 'react-bootstrap';
 
 function App() {
   return (
-    <Container>
-      <Row>
+    <div class="container">
+      <div class="row">
         <PrintPlaces />
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 }
 
