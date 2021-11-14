@@ -1,6 +1,7 @@
 import './App.css';
 import PrintPlaces from './PrintPlaces.jsx';
 import PrintDistance from './PrintDistance.jsx';
+import PrintDate from './PrintDate';
 
 function App() {
   return (
@@ -16,6 +17,11 @@ function App() {
           secondXDegrees="50" secondXSeconds="45" secondXDirection="W"
           secondYDegrees="25" secondYMinutes="13" secondYDirection="N" 
           />
+
+        <PrintDate
+          firstDateDay="5" firstDateMonth="11" firstDateYear="2021"
+          secondDateDay="14" secondDateMonth="11" secondDateYear="2021"
+        />
       </div>
     </div>
   );
