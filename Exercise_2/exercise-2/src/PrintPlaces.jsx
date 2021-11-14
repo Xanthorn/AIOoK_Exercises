@@ -3,7 +3,7 @@ import { Places } from './Places.js'
 
 export default PrintPlaces;
 
-let placesList = calculateDistance(Places);
+let placesList = calculateDistanceBetweenPlaces(Places);
 
 const Place = props => {
     return (
@@ -17,7 +17,7 @@ const Place = props => {
     )
 }
 
-function calculateDistance(places) {
+function calculateDistanceBetweenPlaces(places) {
     for (let i = 0; i < places.length; i++) {
         if (i === 0) {
             continue;
@@ -36,15 +36,15 @@ function calculateDistance(places) {
 export function PrintPlaces() {
     return (
         <div className="col">
-            <h1 className="text-center display-4">List of places</h1>
+            <h1 className="text-center display-4">Lista odwiedzanych miejsc</h1>
             <table className="table table-secondary table-hover table-striped table-bordered">
                 <thead>
                     <tr className="text-center">
-                        <th>Name</th>
-                        <th>Longtitude</th>
-                        <th>Latitude</th>
-                        <th>Distance</th>
-                        <th>Day Of Arrive</th>
+                        <th>Nazwa miasta</th>
+                        <th>Długość geograficzna</th>
+                        <th>Szerokość geograficzna</th>
+                        <th>Odległość od poprzedniego miasta</th>
+                        <th>Dzień dotarcia</th>
                     </tr>
                 </thead>
                 <tbody>
