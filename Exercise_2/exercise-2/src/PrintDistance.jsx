@@ -58,10 +58,10 @@ function calculateDistance(props) {
 const PrintDistance = (props) => {
     return (
         <div className="col">
+            <h2 className="display-6 text-center">Obliczanie dystansu</h2>
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <h2 className="display-6 text-center">Obliczanie dystansu</h2>
                         <form className="text-center">
                             <div className="container">
                                 <div className="row g-2 mb-3">
@@ -74,7 +74,7 @@ const PrintDistance = (props) => {
                                                     <p className="h5">Stopnie:</p>
                                                 </div>
                                                 <div className="col text-start">
-                                                    <p class="h5 text-start">{props.firstXDegrees}</p>
+                                                    <p className="h5 text-start">{props.firstXDegrees}</p>
                                                 </div>
                                             </div>
                                             <div className="row mb-3">
@@ -82,7 +82,7 @@ const PrintDistance = (props) => {
                                                     <p className="h5">Minuty:</p>
                                                 </div>
                                                 <div className="col text-start">
-                                                    <p class="h5 text-start">{props.firstXMinutes}</p>
+                                                    <p className="h5 text-start">{props.firstXMinutes}</p>
                                                 </div>
                                             </div>
                                             <div className="row mb-3">
@@ -90,7 +90,7 @@ const PrintDistance = (props) => {
                                                     <p className="h5">Sekundy:</p>
                                                 </div>
                                                 <div className="col text-start">
-                                                    <p class="h5 text-start">{props.firstXSeconds}</p>
+                                                    <p className="h5 text-start">{props.firstXSeconds}</p>
                                                 </div>
                                             </div>
                                             <div className="row mb-3">
@@ -98,7 +98,7 @@ const PrintDistance = (props) => {
                                                     <p className="h5">Kierunek:</p>
                                                 </div>
                                                 <div className="col text-start">
-                                                    <p class="h5">{props.firstXDirection}</p>
+                                                    <p className="h5">{props.firstXDirection}</p>
                                                 </div>
                                             </div>
 
@@ -108,7 +108,7 @@ const PrintDistance = (props) => {
                                                     <p className="h5">Stopnie:</p>
                                                 </div>
                                                 <div className="col text-start">
-                                                    <p class="h5 text-start">{props.firstYDegrees}</p>
+                                                    <p className="h5 text-start">{props.firstYDegrees}</p>
                                                 </div>
                                             </div>
                                             <div className="row mb-3">
@@ -116,7 +116,7 @@ const PrintDistance = (props) => {
                                                     <p className="h5">Minuty:</p>
                                                 </div>
                                                 <div className="col text-start">
-                                                    <p class="h5 text-start">{props.firstYMinutes}</p>
+                                                    <p className="h5 text-start">{props.firstYMinutes}</p>
                                                 </div>
                                             </div>
                                             <div className="row mb-3">
@@ -124,7 +124,7 @@ const PrintDistance = (props) => {
                                                     <p className="h5">Sekundy:</p>
                                                 </div>
                                                 <div className="col text-start">
-                                                    <p class="h5 text-start">{props.firstYSeconds}</p>
+                                                    <p className="h5 text-start">{props.firstYSeconds}</p>
                                                 </div>
                                             </div>
                                             <div className="row mb-3">
@@ -132,7 +132,7 @@ const PrintDistance = (props) => {
                                                     <p className="h5">Kierunek:</p>
                                                 </div>
                                                 <div className="col text-start">
-                                                    <p class="h5">{props.firstYDirection}</p>
+                                                    <p className="h5">{props.firstYDirection}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -140,13 +140,13 @@ const PrintDistance = (props) => {
                                     <div className="col">
                                         <h3 className="text-center">Drugi punkt:</h3>
                                         <div className="container text-center">
-                                        <h4 className="text-center">Długość</h4>
+                                            <h4 className="text-center">Długość</h4>
                                             <div className="row mb-3">
                                                 <div className="col text-start">
                                                     <p className="h5">Stopnie:</p>
                                                 </div>
                                                 <div className="col text-start">
-                                                    <p class="h5 text-start">{props.secondXDegrees}</p>
+                                                    <p className="h5 text-start">{props.secondXDegrees}</p>
                                                 </div>
                                             </div>
                                             <div className="row mb-3">
@@ -154,7 +154,7 @@ const PrintDistance = (props) => {
                                                     <p className="h5">Minuty:</p>
                                                 </div>
                                                 <div className="col text-start">
-                                                    <p class="h5 text-start">{props.secondXMinutes}</p>
+                                                    <p className="h5 text-start">{props.secondXMinutes}</p>
                                                 </div>
                                             </div>
                                             <div className="row mb-3">
@@ -162,7 +162,7 @@ const PrintDistance = (props) => {
                                                     <p className="h5">Sekundy:</p>
                                                 </div>
                                                 <div className="col text-start">
-                                                    <p class="h5 text-start">{props.secondXSeconds}</p>
+                                                    <p className="h5 text-start">{props.secondXSeconds}</p>
                                                 </div>
                                             </div>
                                             <div className="row mb-3">
@@ -170,7 +170,7 @@ const PrintDistance = (props) => {
                                                     <p className="h5">Kierunek:</p>
                                                 </div>
                                                 <div className="col text-start">
-                                                    <p class="h5">{props.secondXDirection}</p>
+                                                    <p className="h5">{props.secondXDirection}</p>
                                                 </div>
                                             </div>
 
@@ -180,7 +180,7 @@ const PrintDistance = (props) => {
                                                     <p className="h5">Stopnie:</p>
                                                 </div>
                                                 <div className="col text-start">
-                                                    <p class="h5 text-start">{props.secondYDegrees}</p>
+                                                    <p className="h5 text-start">{props.secondYDegrees}</p>
                                                 </div>
                                             </div>
                                             <div className="row mb-3">
@@ -188,7 +188,7 @@ const PrintDistance = (props) => {
                                                     <p className="h5">Minuty:</p>
                                                 </div>
                                                 <div className="col text-start">
-                                                    <p class="h5 text-start">{props.secondYMinutes}</p>
+                                                    <p className="h5 text-start">{props.secondYMinutes}</p>
                                                 </div>
                                             </div>
                                             <div className="row mb-3">
@@ -196,7 +196,7 @@ const PrintDistance = (props) => {
                                                     <p className="h5">Sekundy:</p>
                                                 </div>
                                                 <div className="col text-start">
-                                                    <p class="h5 text-start">{props.secondYSeconds}</p>
+                                                    <p className="h5 text-start">{props.secondYSeconds}</p>
                                                 </div>
                                             </div>
                                             <div className="row mb-3">
@@ -204,7 +204,7 @@ const PrintDistance = (props) => {
                                                     <p className="h5">Kierunek:</p>
                                                 </div>
                                                 <div className="col text-start">
-                                                    <p class="h5">{props.secondYDirection}</p>
+                                                    <p className="h5">{props.secondYDirection}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -213,11 +213,8 @@ const PrintDistance = (props) => {
                             </div>
 
                             <div className="row">
-                                <div className="col">
-                                    <p className="h3">Wynik: </p>
-                                </div>
-                                <div className="col text-start">
-                                    <p className="h3">{Math.round(calculateDistance(props) * 100) / 100} mil morskich</p>
+                                <div className="col text-center">
+                                    <p className="h4">Wynik: {Math.round(calculateDistance(props) * 100) / 100} mil morskich</p>
                                 </div>
                             </div>
                         </form>
