@@ -42,6 +42,18 @@ class Products extends Component {
         });
     }
 
+    deleteProduct = (id) => {
+        this.setState(state => {
+            let productsList = state.products;
+
+            productsList = productsList.filter(x => {
+                return x.id != id;
+            });
+
+            return { products: productsList }
+        })
+    }
+
     render() {
         return (
             <div className="container">
@@ -65,6 +77,7 @@ class Products extends Component {
                                                 name={product.name}
                                                 status={product.status}
                                                 setProductStatus={this.setProductStatus}
+                                                deleteProduct={this.deleteProduct}
                                             />
                                         );
                                     })

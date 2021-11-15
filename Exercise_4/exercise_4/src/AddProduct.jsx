@@ -27,7 +27,7 @@ class AddProduct extends Component {
                         </td>
                         <td>
                             <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="status" onChange={(e) => this.onChange(e)}>
-                                <option selected>Wybierz status</option>
+                                <option selected>Status produktu</option>
                                 <option value={statuses.ACTIVE}>aktywny</option>
                                 <option value={statuses.INBASKET}>w koszyku</option>
                                 <option value={statuses.BOUGHT}>kupiony</option>
