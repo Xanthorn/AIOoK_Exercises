@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import Products from './Products';
 import ProductDetails from './ProductDetails';
 import EditProduct from './EditProduct';
@@ -38,12 +38,10 @@ class App extends Component {
             </div>
           </div>
         </nav>
-        <Routes>
-          <Route exact path="/" element={<Products products={this.state.products} />} />
+          <Route exact path="/" render={() => <Products products={this.state.products} />} />
           <Route exact path="/:id" render={({ match }) => <ProductDetails product={this.state.products.filter(x => { return x.id === match.params.id })} />} />
           <Route path="/:id/edit" element={<EditProduct />} />
           <Route path="/search" element={<FindProduct />} />
-        </Routes>
       </BrowserRouter>
     );
   }
