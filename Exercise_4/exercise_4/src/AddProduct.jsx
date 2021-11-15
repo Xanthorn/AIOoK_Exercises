@@ -26,7 +26,8 @@ class AddProduct extends Component {
                             <input type="text" className="form-control form-control-lg form" id="name" placeholder="Nazwa produktu" onChange={(e) => this.onChange(e)} />
                         </td>
                         <td>
-                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="status" onChange={(e) => this.onChange(e)}>
+                            <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="status" onChange={(e) => this.onChange(e)}>
+                                <option selected>Wybierz status</option>
                                 <option value={statuses.ACTIVE}>aktywny</option>
                                 <option value={statuses.INBASKET}>w koszyku</option>
                                 <option value={statuses.BOUGHT}>kupiony</option>

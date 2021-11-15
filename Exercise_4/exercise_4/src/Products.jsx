@@ -3,6 +3,7 @@ import ProductClass, { statuses } from "./class/ProductClass";
 import Product from "./Product";
 import './Product.css';
 import AddProduct from "./AddProduct";
+import { ThermometerSnow } from "react-bootstrap-icons";
 
 class Products extends Component {
     constructor(props) {
@@ -22,6 +23,20 @@ class Products extends Component {
 
             let newProduct = new ProductClass(s.name, s.status);
             productsList.push(newProduct);
+
+            return { products: productsList }
+        });
+    }
+
+    setProductStatus = (id, status) => {
+        this.setState(state => {
+            let productsList = state.products;
+
+            for (let i = 0; i < productsList.length; i++) {
+                if (productsList[i].id === id) {
+                    productsList[i].status = status;
+                }
+            }
 
             return { products: productsList }
         });
@@ -49,6 +64,7 @@ class Products extends Component {
                                                 id={product.id}
                                                 name={product.name}
                                                 status={product.status}
+                                                setProductStatus={this.setProductStatus}
                                             />
                                         );
                                     })
