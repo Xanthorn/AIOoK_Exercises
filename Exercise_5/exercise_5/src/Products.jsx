@@ -1,19 +1,14 @@
 import React, { Component } from "react";
-import ProductClass, { statuses } from "./class/ProductClass";
+import ProductClass from "./class/ProductClass";
 import Product from "./Product";
 import './Product.css';
 import AddProduct from "./AddProduct";
-import { ThermometerSnow } from "react-bootstrap-icons";
 
 class Products extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            products: [
-                new ProductClass("Masło", statuses.ACTIVE),
-                new ProductClass("Chleb", statuses.INBASKET),
-                new ProductClass("Ciastka", statuses.BOUGHT)
-            ]
+            products: this.props.products
         }
     }
 
@@ -47,7 +42,7 @@ class Products extends Component {
             let productsList = state.products;
 
             productsList = productsList.filter(x => {
-                return x.id != id;
+                return x.id !== id;
             });
 
             return { products: productsList }
