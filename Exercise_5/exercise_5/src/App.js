@@ -18,6 +18,7 @@ class App extends Component {
       ]
     }
   }
+  
   render() {
     return (
       <BrowserRouter>
@@ -38,10 +39,10 @@ class App extends Component {
             </div>
           </div>
         </nav>
-          <Route exact path="/" render={() => <Products products={this.state.products} />} />
-          <Route path="/product/:id" render={({ match }) => <ProductDetails product={this.state.products.filter(x => { return x.id === match.params.id })} />} />
-          <Route path="/product/:id/edit" element={<EditProduct />} />
-          <Route path="/search" render={() => <FindProduct products={this.state.products}/>} />
+        <Route exact path="/" render={() => <Products products={this.state.products} />} />
+        <Route path="/product/:id" render={({ match }) => <ProductDetails product={this.state.products.filter(x => { return x.id === match.params.id })} />} />
+        <Route path="/product/:id/edit" render={({ match }) => <EditProduct products={this.state.products} id={match.params.id} />} />
+        <Route path="/search" render={() => <FindProduct products={this.state.products} />} />
       </BrowserRouter>
     );
   }

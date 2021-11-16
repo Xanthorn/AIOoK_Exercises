@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ProductDetails(props) {
     return (
@@ -8,7 +9,7 @@ function ProductDetails(props) {
                     <h1 className="text-center display-4">Szczegóły produktu</h1>
                 </div>
             </div>
-            <div className="row justify-content-center">
+            <div className="row justify-content-center mb-3">
                 <div className="col-8">
                     <div className="container border border-dark rounded">
                         <div className="row">
@@ -36,6 +37,11 @@ function ProductDetails(props) {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="row mb-3">
+                <div className="col text-center">
+                    <Link className="btn btn-outline-dark" to={`/product/${props.product[0].id}/edit`}>Edytuj produkt</Link>
                 </div>
             </div>
         </div>
