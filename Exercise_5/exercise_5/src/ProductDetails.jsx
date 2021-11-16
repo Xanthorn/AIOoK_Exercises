@@ -5,7 +5,7 @@ function ProductDetails(props) {
         <div className="containter">
             <div className="row">
                 <div className="col">
-                    <h1 className="text-center display-4">Product details</h1>
+                    <h1 className="text-center display-4">Szczegóły produktu</h1>
                 </div>
             </div>
             <div className="row justify-content-center">

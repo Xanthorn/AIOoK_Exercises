@@ -39,9 +39,9 @@ class App extends Component {
           </div>
         </nav>
           <Route exact path="/" render={() => <Products products={this.state.products} />} />
-          <Route exact path="/:id" render={({ match }) => <ProductDetails product={this.state.products.filter(x => { return x.id === match.params.id })} />} />
-          <Route path="/:id/edit" element={<EditProduct />} />
-          <Route path="/search" element={<FindProduct />} />
+          <Route path="/product/:id" render={({ match }) => <ProductDetails product={this.state.products.filter(x => { return x.id === match.params.id })} />} />
+          <Route path="/product/:id/edit" element={<EditProduct />} />
+          <Route path="/search" render={() => <FindProduct products={this.state.products}/>} />
       </BrowserRouter>
     );
   }
