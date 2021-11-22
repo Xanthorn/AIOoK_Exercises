@@ -5,6 +5,7 @@ using exercise_6_db.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace exercise_6_api.Services
@@ -53,6 +54,18 @@ namespace exercise_6_api.Services
             GetProductsResponse response = new()
             {
                 Products = products
+            };
+
+            return response;
+        }
+
+        public async Task<GetProductByIdResponse> GetProductById(Guid productId)
+        {
+            Product product = await _dataContext.Products.Where(p => p.Id == productId).FirstOrDefaultAsync();
+
+            GetProductByIdResponse response = new()
+            {
+                Product = product
             };
 
             return response;

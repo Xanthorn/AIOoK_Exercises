@@ -45,5 +45,13 @@ namespace exercise_6_api.Controllers
 
             return Ok(result);
         }
+
+        [HttpGet(ApiRoutes.Product.GetById)]
+        public async Task<IActionResult> GetProductById([FromRoute] Guid productId)
+        {
+            var result = await _productsService.GetProductById(productId);
+
+            return Ok(result);
+        }
     }
 }
