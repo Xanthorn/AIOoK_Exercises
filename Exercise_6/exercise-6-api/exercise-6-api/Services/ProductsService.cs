@@ -70,5 +70,38 @@ namespace exercise_6_api.Services
 
             return response;
         }
+
+        public async Task<UpdateProductResponse> UpdateProduct(Guid productId, UpdateProductRequest request)
+        {
+            UpdateProductResponse response = new();
+
+            Product existingProduct = await _dataContext.Products.Where(p => p.Id == productId).FirstOrDefaultAsync();
+
+            if (existingProduct == null)
+            {
+                response.Message = "There is no product with given Id";
+                response.ErrorCode = 404;
+                return response;
+            }
+
+            existingProduct.Name = request.Name;
+            existingProduct.Status = request.Status;
+
+            var result = await _dataContext.SaveChangesAsync();
+
+
+            if (result > 0)
+            {
+                response.Message = "Product updated succesfully";
+            }
+
+            else
+            {
+                response.ErrorCode = 500;
+                response.Message = "Internal server error";
+            }
+
+            return response;
+        }
     }
 }

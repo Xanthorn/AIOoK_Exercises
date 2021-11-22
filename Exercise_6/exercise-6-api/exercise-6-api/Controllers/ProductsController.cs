@@ -53,5 +53,21 @@ namespace exercise_6_api.Controllers
 
             return Ok(result);
         }
+
+        [HttpPut(ApiRoutes.Product.Update)]
+        public async Task<IActionResult> UpdateProduct([FromRoute] Guid productId, [FromBody] UpdateProductRequest request)
+        {
+            var result = await _productsService.UpdateProduct(productId, request);
+
+            if(result.ErrorCode == -1)
+            {
+                return Ok(result.Message);
+            }
+
+            else
+            {
+                return StatusCode(result.ErrorCode, result.Message);
+            }
+        }
     }
 }
