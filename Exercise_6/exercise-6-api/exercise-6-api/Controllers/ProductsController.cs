@@ -37,5 +37,13 @@ namespace exercise_6_api.Controllers
                 return StatusCode(result.ErrorCode, result.Message);
             }
         }
+
+        [HttpGet(ApiRoutes.Product.GetAll)]
+        public async Task<IActionResult> GetProducts()
+        {
+            var result = await _productsService.GetProducts();
+
+            return Ok(result);
+        }
     }
 }

@@ -2,7 +2,9 @@
 using exercise_6_api.Contracts.Responses;
 using exercise_6_db;
 using exercise_6_db.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace exercise_6_api.Services
@@ -40,6 +42,18 @@ namespace exercise_6_api.Services
                 response.Message = "Internal server error";
                 response.ErrorCode = 500;
             }
+
+            return response;
+        }
+
+        public async Task<GetProductsResponse> GetProducts()
+        {
+            List<Product> products = await _dataContext.Products.ToListAsync();
+
+            GetProductsResponse response = new()
+            {
+                Products = products
+            };
 
             return response;
         }
