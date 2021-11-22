@@ -69,5 +69,21 @@ namespace exercise_6_api.Controllers
                 return StatusCode(result.ErrorCode, result.Message);
             }
         }
+
+        [HttpDelete(ApiRoutes.Product.Delete)]
+        public async Task<IActionResult> DeleteProduct([FromRoute] Guid productId)
+        {
+            var result = await _productsService.DeleteProduct(productId);
+
+            if (result.ErrorCode == -1)
+            {
+                return Ok(result.Message);
+            }
+
+            else
+            {
+                return StatusCode(result.ErrorCode, result.Message);
+            }
+        }
     }
 }

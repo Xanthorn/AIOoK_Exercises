@@ -89,7 +89,6 @@ namespace exercise_6_api.Services
 
             var result = await _dataContext.SaveChangesAsync();
 
-
             if (result > 0)
             {
                 response.Message = "Product updated succesfully";
@@ -97,8 +96,38 @@ namespace exercise_6_api.Services
 
             else
             {
-                response.ErrorCode = 500;
                 response.Message = "Internal server error";
+                response.ErrorCode = 500;
+            }
+
+            return response;
+        }
+
+        public async Task<DeleteProductResponse> DeleteProduct(Guid productId)
+        {
+            DeleteProductResponse response = new();
+
+            Product product = await _dataContext.Products.Where(p => p.Id == productId).FirstOrDefaultAsync();
+
+            if (product == null)
+            {
+                response.Message = "There is no product with given Id";
+                response.ErrorCode = 404;
+                return response;
+            }
+
+            _dataContext.Products.Remove(product);
+            var result = await _dataContext.SaveChangesAsync();
+
+            if (result > 0)
+            {
+                response.Message = "Product deleted succesfully";
+            }
+
+            else
+            {
+                response.Message = "Internal server error";
+                response.ErrorCode = 500;
             }
 
             return response;
