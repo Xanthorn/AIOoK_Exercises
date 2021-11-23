@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { statuses } from "./class/ProductClass";
+import { statuses } from "../Classes/ProductClass";
 
 class EditProduct extends Component {
     constructor(props) {

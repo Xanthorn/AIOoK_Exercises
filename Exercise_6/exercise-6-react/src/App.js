@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Products from './Components/Products';
 import ProductDetails from './Components/ProductDetails';
 import EditProduct from './Components/EditProduct';
-import FindProduct from './Components/FindProduct';
 
 function App() {
   return (
@@ -29,7 +28,6 @@ function App() {
         <Route path="/" element={<Products />} />
         <Route path="/product/:id" render={({ match }) => <ProductDetails id={match.params.id} />} />
         <Route path="/product/:id/edit" render={({ match }) => <EditProduct id={match.params.id} />} />
-        <Route path="/search" element={<FindProduct products={this.state.products} />} />
       </Routes>
     </Router>
   );

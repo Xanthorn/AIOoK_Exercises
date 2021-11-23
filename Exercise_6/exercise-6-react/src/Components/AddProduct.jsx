@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { statuses } from "./class/ProductClass";
+import { statuses } from "../Classes/ProductClass";
 
 class AddProduct extends Component {
     constructor(props) {
@@ -26,8 +26,8 @@ class AddProduct extends Component {
                             <input type="text" className="form-control form-control-lg form" id="name" placeholder="Nazwa produktu" onChange={(e) => this.onChange(e)} />
                         </td>
                         <td>
-                            <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="status" onChange={(e) => this.onChange(e)}>
-                                <option selected>Status produktu</option>
+                            <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" defaultValue={"DEFAULT"} id="status" onChange={(e) => this.onChange(e)}>
+                                <option value="DEFAULT" disabled>Status produktu</option>
                                 <option value={statuses.ACTIVE}>aktywny</option>
                                 <option value={statuses.INBASKET}>w koszyku</option>
                                 <option value={statuses.BOUGHT}>kupiony</option>

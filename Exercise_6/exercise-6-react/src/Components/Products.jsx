@@ -1,18 +1,14 @@
-import React, { Component } from "react";
-import ProductClass from "../Classes/ProductClass";
+import React from "react";
 import Product from "./Product";
-import "../Stylesheets/Product.cs"
+import "../Stylesheets/Product.css"
 import AddProduct from "./AddProduct";
+import ProductsService from "../Services/ProductsService";
 
-class Products extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            products: this.props.products
-        }
-    }
+function Products(props) {
 
-    addProduct = (s) => {
+    const [products, updateProducts] = React.useState([]);
+
+    /*addProduct = (s) => {
         this.setState(state => {
             let productsList = state.products;
 
@@ -47,49 +43,66 @@ class Products extends Component {
 
             return { products: productsList }
         })
-    }
+    }*/
 
-    render() {
-        return (
-            <div className="container">
-                <div className="row">
-                    <div className="col">
-                        <table className="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th className="text-center">Nazwa</th>
-                                    <th className="text-center">Status</th>
-                                    <th className="text-center">Zarządzanie</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    this.state.products.map((product, key) => {
-                                        return (
-                                            <Product
-                                                key={key}
-                                                id={product.id}
-                                                name={product.name}
-                                                status={product.status}
-                                                setProductStatus={this.setProductStatus}
-                                                deleteProduct={this.deleteProduct}
-                                            />
-                                        );
-                                    })
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+    /*async componentDidMount() {
+        let productsService = new ProductsService();
+        let fetchedProducts = await productsService.GetAllProducts();
 
-                <div className="row">
-                    <div className="col">
-                        <AddProduct addProduct={this.addProduct} />
-                    </div>
+        if (fetchedProducts.length > 0) {
+            this.setState(state => {
+                return { products: fetchedProducts.products }
+            });
+        }
+    }*/
+
+    React.useEffect(function effectFunction() {
+        async function fetchProducts() {
+            let productService = new ProductsService();
+            let fetchedProducts = await productService.GetAllProducts();
+            updateProducts(fetchedProducts);
+        }
+        fetchProducts();
+
+    }, []);
+
+    return (
+        <div className="container">
+            <div className="row">
+                <div className="col">
+                    <table className="table table-hover">
+                        <thead>
+                            <tr>
+                                <th className="text-center">Nazwa</th>
+                                <th className="text-center">Status</th>
+                                <th className="text-center">Zarządzanie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                products.map((product, key) => {
+                                    return (
+                                        <Product
+                                            key={key}
+                                            id={product.id}
+                                            name={product.name}
+                                            status={product.status}
+                                        />
+                                    );
+                                })
+                            }
+                        </tbody>
+                    </table>
                 </div>
             </div>
-        )
-    }
+
+            <div className="row">
+                <div className="col">
+                    <AddProduct />
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default Products;
