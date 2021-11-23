@@ -20,4 +20,20 @@ export default class ProductsService {
 
         return fetchedProducts;
     }
+
+    async GetProductById(id) {
+        let fetchedProduct = {};
+
+        await axios.get(`url/${id}`)
+            .then(
+                response => {
+                    fetchedProduct = response.data.products;
+                },
+                error => {
+                    console.log(error);
+                }
+            );
+
+        return fetchedProduct;
+    }
 }
