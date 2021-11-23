@@ -27,7 +27,7 @@ function App() {
       </nav>
       <Routes>
         <Route path="/" element={<Products />} />
-        <Route path="/product/:id" render={(match) => <ProductDetails id={match.params.id} />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/product/:id/edit" render={(match) => <EditProduct id={match.params.id} />} />
         <Route path="/search" element={<FindProduct />} />
       </Routes>

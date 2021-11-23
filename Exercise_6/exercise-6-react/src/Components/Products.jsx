@@ -3,58 +3,11 @@ import Product from "./Product";
 import "../Stylesheets/Product.css"
 import AddProduct from "./AddProduct";
 import ProductsService from "../Services/ProductsService";
+import { statuses } from "../Classes/ProductClass";
 
 function Products(props) {
 
     const [products, updateProducts] = React.useState([]);
-
-    /*addProduct = (s) => {
-        this.setState(state => {
-            let productsList = state.products;
-
-            let newProduct = new ProductClass(s.name, s.status);
-            productsList.push(newProduct);
-
-            return { products: productsList }
-        });
-    }
-
-    setProductStatus = (id, status) => {
-        this.setState(state => {
-            let productsList = state.products;
-
-            for (let i = 0; i < productsList.length; i++) {
-                if (productsList[i].id === id) {
-                    productsList[i].status = status;
-                }
-            }
-
-            return { products: productsList }
-        });
-    }
-
-    deleteProduct = (id) => {
-        this.setState(state => {
-            let productsList = state.products;
-
-            productsList = productsList.filter(x => {
-                return x.id !== id;
-            });
-
-            return { products: productsList }
-        })
-    }*/
-
-    /*async componentDidMount() {
-        let productsService = new ProductsService();
-        let fetchedProducts = await productsService.GetAllProducts();
-
-        if (fetchedProducts.length > 0) {
-            this.setState(state => {
-                return { products: fetchedProducts.products }
-            });
-        }
-    }*/
 
     React.useEffect(function effectFunction() {
         async function fetchProducts() {
@@ -86,7 +39,7 @@ function Products(props) {
                                             key={key}
                                             id={product.id}
                                             name={product.name}
-                                            status={product.status}
+                                            status={statuses[product.status]}
                                         />
                                     );
                                 })

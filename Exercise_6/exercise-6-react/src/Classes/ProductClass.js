@@ -7,9 +7,9 @@ class ProductClass {
 }
 
 export const statuses = {
-    ACTIVE: "aktywny",
-    INBASKET: "w koszyku",
-    BOUGHT: "kupiony"
+    0: "aktywny",
+    1: "w koszyku",
+    2: "kupiony"
 };
 
 export default ProductClass;

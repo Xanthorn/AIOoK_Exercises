@@ -12,13 +12,13 @@ const Product = (props) => {
                 {props.status}
             </td>
             <td className="text-end">
-                {props.status === statuses.ACTIVE ? (
+                {props.status === statuses[0] ? (
                     <div>
                         <button className="btn btn-outline-dark" >Ustaw jako "w koszyku"</button>
                         <Link className="btn btn-outline-dark" to={`/product/${props.id}`}>Wyświetl szczegóły</Link>
                         <button className="btn btn-outline-dark" >Usuń produkt</button>
                     </div>
-                ) : props.status === statuses.INBASKET ? (
+                ) : props.status === statuses[1] ? (
                     <div>
                         <button className="btn btn-outline-dark" >Ustaw jako "aktywny"</button>
                         <button className="btn btn-outline-dark" >Ustaw jako "kupiony"</button>
