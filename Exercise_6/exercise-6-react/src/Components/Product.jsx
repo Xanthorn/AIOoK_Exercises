@@ -1,35 +1,47 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { statuses } from "../Classes/ProductClass";
+import ProductsService from "../Services/ProductsService";
 
-const Product = (props) => {
+function Product(props) {
+
+    async function updateProduct(id, name, status) {
+        const productsService = new ProductsService();
+        await productsService.UpdateProduct(id, name, status)
+    };
+
+    async function deleteProduct(id) {
+        const productsService = new ProductsService();
+        await productsService.DeleteProduct(id);
+    };
+
     return (
         <tr>
             <td>
                 {props.name}
             </td>
             <td>
-                {props.status}
+                {statuses[props.status]}
             </td>
             <td className="text-end">
-                {props.status === statuses[0] ? (
+                {props.status === 0 ? (
                     <div>
-                        <button className="btn btn-outline-dark" >Ustaw jako "w koszyku"</button>
+                        <button className="btn btn-outline-dark" onClick={() => updateProduct(props.id, props.name, 1)}>Ustaw jako "w koszyku"</button>
                         <Link className="btn btn-outline-dark" to={`/product/${props.id}`}>Wyświetl szczegóły</Link>
-                        <button className="btn btn-outline-dark" >Usuń produkt</button>
+                        <button className="btn btn-outline-dark" onClick={() => deleteProduct(props.id)}>Usuń produkt</button>
                     </div>
-                ) : props.status === statuses[1] ? (
+                ) : props.status === 1 ? (
                     <div>
-                        <button className="btn btn-outline-dark" >Ustaw jako "aktywny"</button>
-                        <button className="btn btn-outline-dark" >Ustaw jako "kupiony"</button>
+                        <button className="btn btn-outline-dark" onClick={() => updateProduct(props.id, props.name, 0)}>Ustaw jako "aktywny"</button>
+                        <button className="btn btn-outline-dark" onClick={() => updateProduct(props.id, props.name, 2)}>Ustaw jako "kupiony"</button>
                         <Link className="btn btn-outline-dark" to={`/product/${props.id}`}>Wyświetl szczegóły</Link>
-                        <button className="btn btn-outline-dark" >Usuń produkt</button>
+                        <button className="btn btn-outline-dark" onClick={() => deleteProduct(props.id)}>Usuń produkt</button>
                     </div>
                 ) : (
                     <div>
-                        <button className="btn btn-outline-dark" >Ustaw jako "w koszyku"</button>
+                        <button className="btn btn-outline-dark" onClick={() => updateProduct(props.id, props.name, 1)}>Ustaw jako "w koszyku"</button>
                         <Link className="btn btn-outline-dark" to={`/product/${props.id}`}>Wyświetl szczegóły</Link>
-                        <button className="btn btn-outline-dark" >Usuń produkt</button>
+                        <button className="btn btn-outline-dark" onClick={() => deleteProduct(props.id)}>Usuń produkt</button>
                     </div>
                 )
                 }

@@ -3,7 +3,6 @@ import Product from "./Product";
 import "../Stylesheets/Product.css"
 import AddProduct from "./AddProduct";
 import ProductsService from "../Services/ProductsService";
-import { statuses } from "../Classes/ProductClass";
 
 function Products(props) {
 
@@ -39,7 +38,7 @@ function Products(props) {
                                             key={key}
                                             id={product.id}
                                             name={product.name}
-                                            status={statuses[product.status]}
+                                            status={product.status}
                                         />
                                     );
                                 })

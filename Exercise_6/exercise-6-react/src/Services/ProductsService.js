@@ -56,4 +56,14 @@ export default class ProductsService {
             console.error(error);
         }
     }
+
+    async DeleteProduct(id) {
+        try {
+            const response = await axios.delete(`${url}/${id}`);
+            console.log(response.data);
+        }
+        catch (error) {
+            console.error(error);
+        }
+    }
 }
