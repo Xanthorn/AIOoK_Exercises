@@ -25,9 +25,9 @@ function Products(props) {
                     <table className="table table-hover">
                         <thead>
                             <tr>
-                                <th className="text-center">Nazwa</th>
-                                <th className="text-center">Status</th>
-                                <th className="text-center">Zarządzanie</th>
+                                <th className="text-center col-4">Nazwa</th>
+                                <th className="text-center col-1">Status</th>
+                                <th className="text-center col-7">Zarządzanie</th>
                             </tr>
                         </thead>
                         <tbody>

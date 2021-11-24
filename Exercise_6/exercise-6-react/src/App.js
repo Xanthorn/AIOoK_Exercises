@@ -28,7 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetails />} />
-        <Route path="/product/:id/edit" render={(match) => <EditProduct id={match.params.id} />} />
+        <Route path="/product/:id/edit" element={<EditProduct />} />
         <Route path="/search" element={<FindProduct />} />
       </Routes>
     </Router>
